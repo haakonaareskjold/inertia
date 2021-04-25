@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Repositories\MessageRepository\MessageRepository;
+use App\Models\Repositories\MessageRepository\MessageRepositoryInterface;
 use App\Models\Repositories\UserRepository\UserRepository;
 use App\Models\Repositories\UserRepository\UserRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
@@ -18,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             UserRepositoryInterface::class,
             UserRepository::class
+        );
+        $this->app->bind(
+            MessageRepositoryInterface::class,
+            MessageRepository::class
         );
     }
 

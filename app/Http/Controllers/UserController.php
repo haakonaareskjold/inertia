@@ -7,13 +7,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function __construct(private UserRepositoryInterface $userRepository){}
+    public function __construct(private UserRepositoryInterface $userRepository) {}
 
-    public function index()
+    public function index(Request $request)
     {
-        $data = $this->userRepository->getAll();
+        $users = $this->userRepository->getAll();
 
-        return response()->json($data);
+       if($request->is('api/*')) {
+           return response()->json($users);
+       }
+
+        return inertia('Users', ['users' => $users]);
     }
 
     public function show($id)
