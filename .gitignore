@@ -4,6 +4,8 @@
 /storage/*.key
 /vendor
 /.idea
+/public/css
+/public/js
 /.vscode
 .env
 .env.backup
