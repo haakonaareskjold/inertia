@@ -19,4 +19,9 @@ class MessageRepository extends BaseRepositoryAbstract implements MessageReposit
     {
         return $this->message::all();
     }
+
+    public function create($request)
+    {
+        return $this->message::query()->create($request);
+    }
 }

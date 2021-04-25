@@ -3,6 +3,7 @@
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -32,5 +33,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/messages', [MessageController::class, 'index']);
+Route::get('/users', [UserController::class, 'index'])->name('users');
+Route::get('/messages', [MessageController::class, 'index'])->name('messages');
+Route::post('/messages', [MessageController::class, 'store']);
+

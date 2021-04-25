@@ -20,4 +20,15 @@ class MessageController extends Controller
 
         return inertia('Messages', ['messages' => $messages]);
     }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'text' => 'required|min:5|max:255'
+        ]);
+
+        $this->messageRepository->create($validated);
+
+        return redirect(route('messages'));
+    }
 }
