@@ -4,7 +4,6 @@ namespace App\Models\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 abstract class BaseRepositoryAbstract
 {
     /**
@@ -12,5 +11,6 @@ abstract class BaseRepositoryAbstract
      * @param Model $model
      */
     public function __construct(protected Model $model)
-    {}
+    {
+    }
 }

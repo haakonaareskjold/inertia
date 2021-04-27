@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Models\Repositories\UserRepository;
 
 use App\Models\Repositories\BaseRepositoryAbstract;

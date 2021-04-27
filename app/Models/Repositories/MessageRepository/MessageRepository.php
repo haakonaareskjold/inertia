@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Models\Repositories\MessageRepository;
-
 
 use App\Models\Message;
 use App\Models\Repositories\BaseRepositoryAbstract;
