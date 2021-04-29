@@ -3,9 +3,9 @@
 namespace App\Models\Repositories\MessageRepository;
 
 use App\Models\Message;
-use App\Models\Repositories\BaseRepositoryAbstract;
+use App\Models\Repositories\AbstractBaseRepository;
 
-class MessageRepository extends BaseRepositoryAbstract implements MessageRepositoryInterface
+class MessageRepository extends AbstractBaseRepository implements MessageRepositoryInterface
 {
 
     public function __construct(protected Message $message)

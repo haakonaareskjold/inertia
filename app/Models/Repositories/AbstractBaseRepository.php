@@ -4,7 +4,7 @@ namespace App\Models\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 
-abstract class BaseRepositoryAbstract
+abstract class AbstractBaseRepository
 {
     /**
      * BaseRepository constructor.
