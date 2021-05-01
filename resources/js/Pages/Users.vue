@@ -7,11 +7,13 @@
 </template>
 
 <script>
+import Input from "../Components/Input";
 export default {
     name: "users",
+    components: {Input},
     props: {
         users: Array
-    }
+    },
 }
 </script>
 

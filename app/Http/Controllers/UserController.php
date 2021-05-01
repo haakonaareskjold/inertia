@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Repositories\UserRepository\UserRepositoryInterface;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,6 +12,7 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
+
         $users = $this->userRepository->getAll();
 
        if($request->is('api/*')) {
@@ -18,6 +20,17 @@ class UserController extends Controller
        }
 
         return inertia('Users', ['users' => $users]);
+    }
+
+    public function search(Request $request)
+    {
+        $query = User::query();
+
+        if ($request->is('search')) {
+            $query->where('name', 'LIKE', '%'.$request->get('search').'%');
+        }
+
+        return inertia('Search', ['users' => $query->paginate()]);
     }
 
     public function show($id)

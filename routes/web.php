@@ -34,6 +34,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/users', [UserController::class, 'index'])->name('users');
+Route::get('/search', [UserController::class, 'search'])->name('search');
 Route::get('/messages', [MessageController::class, 'index'])->name('messages');
 Route::post('/messages', [MessageController::class, 'store']);
 
