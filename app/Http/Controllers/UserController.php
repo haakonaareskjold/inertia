@@ -22,11 +22,11 @@ class UserController extends Controller
         return inertia('Users', ['users' => $users]);
     }
 
-    public function search(Request $request)
+    public function search(User $user,Request $request)
     {
 
         if ($request->is('search')) {
-            $query = User::search($request->get('search'));
+            $query = $user::search($request->get('search'));
         }
 
         return inertia('Search', ['users' => $query->paginate()]);
