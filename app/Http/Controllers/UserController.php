@@ -24,10 +24,9 @@ class UserController extends Controller
 
     public function search(Request $request)
     {
-        $query = User::query();
 
         if ($request->is('search')) {
-            $query->where('name', 'LIKE', '%'.$request->get('search').'%');
+            $query = User::search($request->get('search'));
         }
 
         return inertia('Search', ['users' => $query->paginate()]);
