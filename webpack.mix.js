@@ -18,6 +18,7 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
         require('autoprefixer'),
     ])
+    .sourceMaps(false,'source-map')
     .webpackConfig(require('./webpack.config'))
     .browserSync('http://127.0.0.1:8000');
 
